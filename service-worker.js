@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/unicorn-CER/precache-manifest.d4bc7d8227bb52e3f780d34804a59025.js"
+  "/unicorn-CER/precache-manifest.c49045781e141b021cfae9729d128a3e.js"
 );
 
 workbox.clientsClaim();
