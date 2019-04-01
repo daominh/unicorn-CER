@@ -1,3 +1,3 @@
 Real-time Cryptocurrency Exchange Rate
 
-Insiparted from https://github.com/adrianiskander/ticker
+Inspired from https://github.com/adrianiskander/ticker
