@@ -102,7 +102,8 @@ class App extends Component {
   render() {
     return (
       <Container fluid>
-        <Row noGutters>
+        <Row className="title"><h1>Real-time Cryptocurrency Exchange Rate</h1></Row>
+        <Row className="coins" noGutters>
           {Object.keys(this.state.coins).map((key, index) => {
             return (
               <Col key={index} xs="4" md="3" lg="2">
