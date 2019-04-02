@@ -11,7 +11,7 @@ class App extends Component {
 
   componentDidMount() {
     let request = new XMLHttpRequest();
-    request.open('GET', 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=100&tsym=THB')
+    request.open('GET', 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=100&tsym=USD')
     request.send(null)
     request.onload = () => {
       const res = JSON.parse(request.response)
@@ -27,8 +27,8 @@ class App extends Component {
 
     coins.forEach(coin => {
       coin = {
-        name: coin.RAW.THB.FROMSYMBOL,
-        price: coin.RAW.THB.PRICE.toFixed(2)
+        name: coin.RAW.USD.FROMSYMBOL,
+        price: coin.RAW.USD.PRICE.toFixed(2)
       }
       coinsParsed[coin.name] = coin
     })
@@ -46,7 +46,7 @@ class App extends Component {
     let subscriptions = []
 
     symbols.forEach(symbol => {
-      subscriptions.push('5~CCCAGG~'+ symbol +'~THB')
+      subscriptions.push('5~CCCAGG~'+ symbol +'~USD')
     })
 
     cryptoio.emit('SubAdd', {'subs': subscriptions})
@@ -94,8 +94,7 @@ class App extends Component {
     window.setTimeout(() => {
       coins[coin.name].isUp = false
       coins[coin.name].isDown = false
-      this.setState(
-        coins[coin.name])
+      this.setState(coins[coin.name])
     }, 500)
   }
 
@@ -109,7 +108,7 @@ class App extends Component {
               <Col key={index} xs="4" md="3" lg="2">
                 <section className={classNames({"Coin": true,'tickGreen': this.state.coins[key].isUp, 'tickRed': this.state.coins[key].isDown})}>
                   <span><b>{this.state.coins[key].name}</b></span>
-                  <span>{String.fromCharCode(3647)}{this.state.coins[key].price}</span>
+                  <span>{String.fromCharCode(36)}{this.state.coins[key].price}</span>
                 </section>
               </Col>
             )})}
