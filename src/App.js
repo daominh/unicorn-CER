@@ -27,8 +27,8 @@ class App extends Component {
 
     coins.forEach(coin => {
       coin = {
-        name: coin.RAW.USD.FROMSYMBOL,
-        price: coin.RAW.USD.PRICE.toFixed(2)
+        name: coin.RAW ? coin.RAW.USD.FROMSYMBOL : 'Not defined',
+        price: coin.RAW ? coin.RAW.USD.PRICE.toFixed(2) : '0'
       }
       coinsParsed[coin.name] = coin
     })
